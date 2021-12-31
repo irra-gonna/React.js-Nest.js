@@ -1,0 +1,217 @@
+body{
+  font-family: "Montserrat";
+  background-repeat:no-repeat;
+  background-size: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  margin-top: 0px;
+}
+.header{
+  background-color: black;
+  height: 115px;
+  width: 100%;  
+  border-top: 0.5px solid #07700c; 
+  opacity: 0.75; 
+  border-bottom: 1px solid #07700c;
+}
+
+.center{
+  width: 75%;
+  margin: 0px auto;
+}
+
+.clearfix{
+  clear: both;
+  float: none;
+}
+#logo{
+  color: #f0f3f0;
+  display: flex;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  width: 30%;
+  font-size: 100%;
+  float: left;
+  margin-left: -20px;
+  text-decoration-line: none;
+  list-style-type: none;
+  font-weight: bold;
+}
+
+#logo:hover{
+  color: #08830e;
+}
+#logo img{
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  border-radius: 55px;
+  display: block;
+  height: 80px;
+  width: 80px;
+  margin-top: 17px;
+  animation: turning 4s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+@keyframes turning {
+  from{
+      height: 0px;
+      width: 0px;
+  }
+  To{
+      width: 80px;
+      height: 80px;
+  }
+}
+#brand{
+  display: block;
+  margin: 0px;
+  float: left;
+  margin-top: 13%;
+  font-size: 30px;
+  padding-left: 30px;
+}
+#menu{
+  padding-top: 3px;
+  width: 70%;
+  float: right;
+  font-size: 18px;
+  
+}
+#menu ul{
+  line-height: 85px;
+  width: 60%;
+  float: right;
+  margin-right: -100px;
+}
+#menu ul li{
+  display: inline-block;
+  list-style: none;
+  height: 35px;
+  margin-left: 15px;
+  margin-right: 70px;
+}
+#menu a{
+  font-size: 30px;
+  text-decoration:none;
+  font-weight: bold;
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: rgb(243, 248, 242);
+  transition: 300ms all;
+  padding: 10px;
+  height: 20px;
+}
+#menu a:hover,
+#menu .active{
+  color: #08830e;
+}
+#ul{
+  list-style-type: none;
+  width: 300px;
+  height: 300px;
+  background: #dada56; /* Old browsers */
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0;
+  font-family: fantasy;
+  box-shadow: rgb(107, 105, 8) 0px 20px 30px -10px;
+}
+
+#ul a{
+  width: 30%;
+  height: 30px;
+  text-decoration: none;
+  background-color: rgba(13, 15, 1, 0.473);
+  border-radius: 23px;
+  color: #f6faf7;
+  margin-left: 55%;
+  display: flex;
+  opacity: 0.9;
+  justify-content: center;
+  align-items: center;
+}
+#ul a:hover{
+  color: #08830e;
+  transform: scale(1.1);
+}
+/* Login PAge */
+.img_login{
+  width: 110%;
+  margin-top: 0px;
+  margin-left: 50px;
+  border-radius: 50px;
+}
+#rotate{
+  transition: transform .4s ease-in-out;
+}
+#rotate:hover {
+  transform: rotate(360deg);
+  scale: 1.1;
+}
+#yowl{
+  margin-left: 55%;
+  font-weight: bold;
+  font-size: 30px;
+  text-decoration: none;
+  color: rgb(94, 197, 90);
+}
+#yowl:hover{
+  color: rgb(5, 5, 5);
+}
+#link{
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  display: flex;
+  align-items:center;
+}
+#link:hover{
+  color: #08830e;
+}
+
+#log{
+  margin: 14px;
+}
+/* Post Cards */
+#text{
+  color: #f6faf7;
+}
+#card{
+  background-Color: Black;
+  margin-top: 30px;
+}
+#btn-coment{
+  margin-left: 17px;
+  width: 92px;
+  height: 35px;
+}
+#textarea{
+  display: flex;
+}
+#popup-comment{
+  background-color: rgb(12, 12, 12);
+  opacity: 0.8;
+}
+#popup-font{
+  color:  #f6faf7;
+}
+.popup{
+  margin-left: -150px;
+  margin-top: 117px;
+  background: rgb(102, 95, 95);
+  opacity: 0.96;
+}
+#bttn-popup{
+  margin-top: 20px;
+}
+#card-header{
+  color: #f6faf7;
+  display: flex;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 20px;
+  align-items: center;  
+}
+
+
+
+
+
