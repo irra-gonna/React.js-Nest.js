@@ -1,0 +1,63 @@
+version: '3'
+services:
+  mongo:
+    image: mongo
+    container_name: ${MONGO_HOST}
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD}
+      MONGO_INITDB_DATABASE: ${MONGO_DATABASE_NAME}
+      MONGO_USERNAME: ${MONGO_USERNAME}
+      MONGO_PASSWORD: ${MONGO_PASSWORD}
+    networks:
+      - app-network
+    volumes:
+      - ./mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh:ro
+      - mongodb_data:/data/db
+    ports:
+      - '${MONGO_PORT}:${MONGO_PORT}'
+  # app:
+    # container_name: app
+    # environment:
+    #   MONGO_USERNAME: ${MONGO_USERNAME}
+    #   MONGO_PASSWORD: ${MONGO_PASSWORD}
+    #   MONGO_HOST: ${MONGO_HOST}
+    #   MONGO_DATABASE_NAME: ${MONGO_DATABASE_NAME}
+    #   MONGO_PORT: ${MONGO_PORT}
+    #   SERVER_PORT: ${SERVER_PORT}
+    # restart: always
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile.dev
+    # ports:
+    #   - '${SERVER_PORT}:${SERVER_PORT}'
+    # depends_on:
+    #   - mongo
+    # networks:
+    #   - app-network
+    # volumes:
+    #   - ./src:/app/src
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-express
+    environment:
+      ME_CONFIG_MONGODB_SERVER: ${MONGO_HOST}
+      ME_CONFIG_MONGODB_PORT: ${MONGO_PORT}
+      ME_CONFIG_MONGODB_ENABLE_ADMIN: 'false'
+      ME_CONFIG_MONGODB_AUTH_DATABASE: ${MONGO_DATABASE_NAME}
+      ME_CONFIG_MONGODB_AUTH_USERNAME: ${MONGO_USERNAME}
+      ME_CONFIG_MONGODB_AUTH_PASSWORD: ${MONGO_PASSWORD}
+      ME_CONFIG_OPTIONS_EDITORTHEME: icecoder
+      VCAP_APP_PORT: ${ME_PORT}
+    depends_on:
+      - mongo
+    networks:
+      - app-network
+    ports:
+      - '${ME_PORT}:${ME_PORT}'
+    restart: always
+networks:
+  app-network:
+    driver: bridge
+volumes:
+  mongodb_data:
